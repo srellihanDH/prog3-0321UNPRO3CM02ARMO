@@ -1,0 +1,8 @@
+.topcard-icon {
+    color: rebeccapurple !important;
+}
+
+/* Este estilo aplica de manera globarl, a pesar de estar en un css por componente  */
+/* .card-body {
+    background-color: yellow;
+} */
