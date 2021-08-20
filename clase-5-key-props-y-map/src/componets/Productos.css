@@ -1,0 +1,8 @@
+.color {
+  width: 13px;
+  height: 13px;
+  border-radius: 0.1em;
+  border: 1px solid gray;
+  display: inline-block;
+  margin: 0.1em;
+}
