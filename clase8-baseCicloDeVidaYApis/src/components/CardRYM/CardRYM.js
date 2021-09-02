@@ -1,4 +1,4 @@
-import React, { Componet } from "react";
+import React from "react";
 
 import "./CardRYM.css";
 

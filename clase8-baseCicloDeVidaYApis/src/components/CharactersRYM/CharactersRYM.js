@@ -8,6 +8,7 @@ class CharactersRYM extends Component {
       originales: [],
       personajes: [],
       nexturl: "",
+      cargando: false,
     };
   }
 
@@ -19,6 +20,7 @@ class CharactersRYM extends Component {
       .then((data) => {
         console.log(data);
         this.setState({
+          cargando: true,
           originales: data.results,
           personajes: data.results,
           nexturl: data.info.next,
@@ -71,13 +73,19 @@ class CharactersRYM extends Component {
     return (
       <>
         <div className="row card-container">
-          {this.state.personajes.map((personaje) => (
-            <CardRYM
-              key={personaje.id}
-              datosPersonaje={personaje}
-              borrar={(personajeBorrar) => this.borrarTarjeta(personajeBorrar)}
-            />
-          ))}
+          {this.state.cargando === false ? (
+            <p>Cargando</p>
+          ) : (
+            this.state.personajes.map((personaje) => (
+              <CardRYM
+                key={personaje.id}
+                datosPersonaje={personaje}
+                borrar={(personajeBorrar) =>
+                  this.borrarTarjeta(personajeBorrar)
+                }
+              />
+            ))
+          )}
         </div>
         <button onClick={() => this.agregarMas()}>Mas Prsonajes</button>
         <button onClick={() => this.reset()}>Reset</button>
