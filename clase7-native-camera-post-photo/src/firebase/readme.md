@@ -1,0 +1,1 @@
+Va con mi archivo config.js por si no tienen creada una db.
